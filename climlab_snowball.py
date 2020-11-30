@@ -13,6 +13,7 @@ def state_plot(model, figsize=(8,12), show=True):
     lat_ticks = np.arange(-90,90,30)
     
     Ts = np.array(model.Ts).flatten()
+    Tf = float(model.Tf)
     
     fig = plt.figure(figsize=figsize)
     
@@ -20,7 +21,7 @@ def state_plot(model, figsize=(8,12), show=True):
     ax1.plot(model.lat, Ts)
     ax1.set(xlim=latlimits, ylim=templimits,
            ylabel='Temperature [deg C]', xticks=lat_ticks)
-    ax1.fill_between(model.lat, Ts, where=Ts<0, color='LightGrey', alpha=0.5)
+    ax1.fill_between(model.lat, Ts, y2=Tf where=Ts<Tf, color='LightGrey', alpha=0.5)
     ax1.grid()
     
     ax2 = fig.add_subplot(2,1,2)
