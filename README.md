@@ -7,6 +7,6 @@ The following commands will create a self-contained conda environment with every
 
 ```
 conda env create --file environment.yml
-conda activate climlab-courseware
+conda activate snowball
 jupyter notebook
 ```
